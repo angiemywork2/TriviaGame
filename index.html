@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+	<html lang="en-us">
+<head>
+	<meta charset="utf-8">
+	<title>TRIVIA</title>
+
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <style type="text/javascript"></style>
+
+	<!-- Added link to the jQuery Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
+</head>
+
+<body>
+
+	<h3>Not So Trivial Bible Trivia</h3>
+
+	<p></p>
+
+	<h1>TRIVIA TIME! Answer the Following Questions!</h1>
+
+	<!--<div id = "timeLeft"></div>
+	<div id = "correctAns"></div>
+	<div id = "wrongAns"></div>
+	<div id = "quesOne"></div>-->
+	<div id = "form"></div>
+
+	<div id = "wins">
+		<p>Your number of wins is : </p>
+
+	</div>
+
+	<div id = "loses">
+		<p>Your number of loses is : </p>
+	</div>
+
+	<div id="quesOne">
+		
+		<form action="" method="post" id="customtheme">
+
+			<p>
+				<label for="redSea">Who did God Choose to divide the Red Sea? </label>				
+				<input type="radio" name="name" title="Moses" value="Moses"/>Moses
+				<input type="radio" name="name" title="Abraham" value="Abraham"/>Abraham
+				<input type="radio" name="name" title="Jacob" value="Jacob"/>Jacob
+				<input type="radio" name="name" title="Paul" value="Paul"/>Paul				
+			</p>
+
+		</form>
+	</div>
+
+	<div id="quesTwo">
+		
+		<form action="" method="post" id="customtheme">
+
+			<p>
+				<label for="commands">How Many Commandments are there? </label>				
+				<input type="radio" name="name" title="Five" value="Five"/>Five
+				<input type="radio" name="name" title="Eight" value="Eight"/>Eight
+				<input type="radio" name="name" title="Ten" value="Ten"/>Ten
+				<input type="radio" name="name" title="Twelve" value="Twelve"/>Twelve				
+			</p>
+
+		</form>
+	</div>
+
+
+<div id="quesThree">
+		
+		<form action="" method="post" id="customtheme">
+
+			<p>
+				<label for="miracle1">In Jesus' first public miracle, He turned what into wine? </label>				
+				<input type="radio" name="name" title="Soup" value="Soup"/>Soup
+				<input type="radio" name="name" title="Water" value="Water"/>Water
+				<input type="radio" name="name" title="Tea" value="Tea"/>Tea
+				<input type="radio" name="name" title="Broth" value="Broth"/>Broth				
+			</p>
+
+		</form>
+	</div>
+
+
+	<!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- Script -->
+  <script>
+
+  numRight = 0;
+  numWrong = 0;
+
+//QUESTION NUMBER ONE
+$(document). ready(function(){
+ $("#quesOne").on("click", function(){
+
+ 		// Get the value from a set of radio buttons
+ 		var guessWho = $("input[name='name']:checked"). val();
+ 		//var guessWho = $( "input[type=radio][name=name]:checked" ).val();
+ 		alert(guessWho);
+ 		console.log(guessWho);
+ 		if (guessWho === "Moses") {
+ 			alert("Correct");
+ 			numRight++;
+ 			$("#wins").html("Your number of wins is: " +numRight);
+ 		}
+
+ 		else{
+ 			alert("Wrong");
+ 			numWrong++;
+ 			$("#wins").html("Your number of loses is: " +numWrong);
+ 		}
+} ) } )
+ 		
+ //QUESTION NUMBER 2
+ $(document). ready(function(){
+ $("#quesTwo").on("click", function(){
+
+ 		// Get the value from a set of radio buttons
+ 		var numCommand = $("input[name='name']:checked"). val();
+ 		//var guessWho = $( "input[type=radio][name=name]:checked" ).val();
+ 		alert(numCommand);
+ 		console.log(numCommand);
+} ) } )
+
+//QUESTION NUMBER THREE
+$(document). ready(function(){
+ $("#quesThree").on("click", function(){
+
+ 		// Get the value from a set of radio buttons
+ 		var drinkType = $("input[name='name']:checked"). val();
+ 		//var guessWho = $( "input[type=radio][name=name]:checked" ).val();
+ 		alert(drinkType);
+ 		console.log(drinkType);
+} ) } )
+      
+  </script>
+
+</body>
+</html>

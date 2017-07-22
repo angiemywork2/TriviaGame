@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<html lang="en-us">
+<head>
+	<meta charset="utf-8">
+	<title>TRIVIA</title>
+
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <style type="text/javascript"></style>
+
+	<!-- Added link to the jQuery Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
+</head>
+
+<body>
+
+	<h3>Not so Trivial Bible Trivia</h3>
+
+	<div id = "timeLeft"></div>
+	<div id = "correctAns"></div>
+	<div id = "wrongAns"></div>
+
+	<!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- Script -->
+  <script>
+
+  	var counter = 60;	
+
+  	 function countSeconds() {
+
+
+  	 		for (var counter = 10; counter >= 0; counter--) {
+  	 			$("#timeLeft").append("<h2> Time Left: </h2>" +counter+ "<h2> seconds </h2");
+  	 		}
+
+        //$("#timeLeft").append("<h2> Time Left: </h2>" +counter+ "<h2> seconds </h2");
+        	//if (counter !== 0) {
+        		
+        		//$("#timeLeft").append("<h2> Time Left: </h2>" +counter+ "<h2> seconds </h2");
+        		//counter--;
+      		//}
+
+      		//else {
+      			//alert("Time is up!");
+      		//}
+     }
+
+     setTimeout (countSeconds, 1000);
+
+     countSeconds();
+
+
+  </script>
+
+</body>
+</html>
