@@ -23,8 +23,11 @@
 
 	<!--<div id = "timeLeft"></div>
 	<div id = "correctAns"></div>
-	<div id = "wrongAns"></div>
-	<div id = "quesOne"></div>-->
+	<div id = "wrongAns"></div>-->
+	<div id = "showTimer">
+		<p>TIME LEFT </p>
+	</div>
+
 	<div id = "form"></div>
 
 	<div id = "wins">
@@ -91,6 +94,44 @@
 
   var numRight = 0;
   var numWrong = 0;
+  var number = 5;
+  intervalId = 0;
+
+  function runTimer() {
+  	intervalId = setInterval(decrement, 1000);
+    console.log(intervalId);
+  }
+
+  //  The decrement function.
+  function decrement() {
+  	number--;
+  	 //  Show the number in the #show-number tag.
+    $("#showTimer").html("TIME LEFT: " + number);
+      //  Once number hits zero...
+    if (number === 0) {
+      //  ...run the stop function.
+    	stop();
+
+    	//  Alert the user that time is up.
+      alert("Time Up!");
+      }
+     }
+
+   //  The stop function
+  function stop() {
+
+      //  Clears our intervalId
+      //  We just pass the name of the interval
+      //  to the clearInterval function.
+		clearInterval(intervalId);
+    }
+
+  runTimer();
+  
+
+
+if (number !== 0) {
+	console.log("MOVE");
 
 //QUESTION NUMBER ONE
 $(document). ready(function(){
@@ -160,6 +201,11 @@ $(document). ready(function(){
  			$("#loses").html("Your number of loses is: " +numWrong);
  		}
 } ) } )
+}
+
+else if (number ===0) {
+	alert("Time is up!");
+}
       
   </script>
 
