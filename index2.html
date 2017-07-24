@@ -25,7 +25,7 @@
 	<div id = "correctAns"></div>
 	<div id = "wrongAns"></div>-->
 	<div id = "showTimer">
-		<p>TIME LEFT </p>
+		<p>TIME LEFT <br></p>
 	</div>
 
 	<div id = "form"></div>
@@ -94,8 +94,10 @@
 
   var numRight = 0;
   var numWrong = 0;
-  var number = 20;
+  var number = 5;
   intervalId = 0;
+
+  //TIMER
 
   function runTimer() {
   	intervalId = setInterval(decrement, 1000);
@@ -108,30 +110,10 @@
   	 //  Show the number in the #show-number tag.
     $("#showTimer").html("TIME LEFT: " + number+ "<br>");
       //  Once number hits zero...
-    if (number === 0) {
-      //  ...run the stop function.
-    	stop();
-
-    	//  Alert the user that time is up.
-      alert("Time Up!");
-      }
-     }
-
-   //  The stop function
-  function stop() {
-
-      //  Clears our intervalId
-      //  We just pass the name of the interval
-      //  to the clearInterval function.
-		clearInterval(intervalId);
-    }
-
-  runTimer();
+   
   
 
-console.log("Is time up? " +number);
 
-//while (number !== 0 ) { 
 if (number !== 0) {
 	console.log("MOVE");
 
@@ -148,7 +130,7 @@ $(document). ready(function(){
  		if (guessWho === "Moses") {
  			alert("Correct");
  			numRight++;
- 			$("#wins").html("<br>Your number of wins is: " +numRight);
+ 			$("#wins").html("Your number of wins is: " +numRight);
  		}
 
  		else{
@@ -171,7 +153,7 @@ $(document). ready(function(){
  		if (numCommand === "Ten") {
  			alert("Correct");
  			numRight++;
- 			$("#wins").html("<br>Your number of wins is: " +numRight);
+ 			$("#wins").html("Your number of wins is: " +numRight);
  		}
 
  		else{
@@ -194,7 +176,7 @@ $(document). ready(function(){
  		if (drinkType === "Water") {
  			alert("Correct");
  			numRight++;
- 			$("#wins").html("<br>Your number of wins is: " +numRight);
+ 			$("#wins").html("Your number of wins is: " +numRight);
  		}
 
  		else{
@@ -204,12 +186,27 @@ $(document). ready(function(){
  		}
 } ) } )
 }
+ else if (number === 0) {
+      //  ...run the stop function.
+    	stop();
 
-else {
-	alert("Time is UP!");
-}
+    	//  Alert the user that time is up.
+      alert("Time Up!");
+      }
+     }
 
-      
+   //  The stop function
+  function stop() {
+
+      //  Clears our intervalId
+      //  We just pass the name of the interval
+      //  to the clearInterval function.
+		clearInterval(intervalId);
+    }
+
+  runTimer();
+
+
   </script>
 
 </body>
